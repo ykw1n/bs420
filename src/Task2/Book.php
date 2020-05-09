@@ -16,7 +16,7 @@ class Book
      * @param $price
      * @param $pagesNumber
      */
-    public function __construct($title, $price, $pagesNumber)
+    public function __construct(string $title, int $price, int $pagesNumber)
     {
         $this->title = $title;
         $this->price = $price;
