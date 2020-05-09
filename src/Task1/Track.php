@@ -10,7 +10,11 @@ class Track
     private float $lapLength;
     private int $lapsNumber;
 
-
+    /**
+     * Track constructor.
+     * @param float $lapLength
+     * @param int $lapsNumber
+     */
     public function __construct(float $lapLength, int $lapsNumber)
     {
         $this->lapLength = $lapLength;
@@ -37,6 +41,9 @@ class Track
         return $this->ontrack;
     }
 
+    /**
+     * @return mixed
+     */
     public function run()
     {
         $carTime = [];

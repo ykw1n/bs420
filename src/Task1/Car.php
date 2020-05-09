@@ -15,6 +15,17 @@ class Car
     public float $fuelConsumption;
     public float $fuelTankVolume;
 
+    /**
+     * Car constructor.
+     * @param int $id
+     * @param string $image
+     * @param string $name
+     * @param int $speed
+     * @param int $pitStopTime
+     * @param float $fuelConsumption
+     * @param float $fuelTankVolume
+     */
+
     public function __construct(
         int $id,
         string $image,
@@ -33,6 +44,7 @@ class Car
         $this->fuelConsumption = $fuelConsumption;
         $this->fuelTankVolume = $fuelTankVolume;
     }
+
 
     public function getId(): int
     {
