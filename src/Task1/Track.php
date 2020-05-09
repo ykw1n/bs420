@@ -6,33 +6,67 @@ namespace App\Task1;
 
 class Track
 {
+    private array $ontrack = [];
+    private float $lapLength;
+    private int $lapsNumber;
+
+
     public function __construct(float $lapLength, int $lapsNumber)
     {
-        //@todo
+        $this->lapLength = $lapLength;
+        $this->lapsNumber = $lapsNumber;
     }
 
     public function getLapLength(): float
     {
-        // @todo
+        return $this->lapLength;
     }
 
     public function getLapsNumber(): int
     {
-        // @todo
+        return $this->lapsNumber;
     }
 
     public function add(Car $car): void
     {
-        // @todo
+        array_push($this->ontrack, $car);
     }
 
     public function all(): array
     {
-        // @todo
+        return $this->ontrack;
     }
 
-    public function run(): Car
+    public function run()
     {
-        // @todo
+        $carTime = [];
+        $allCar = $this->all();
+        $pathLength = $this->getLapLength() * $this->getLapsNumber();
+
+        foreach ($allCar as $carItem) {
+            $pathTime = round($pathLength / $carItem->speed, 2) * 60;
+            $fullPathOnOnetank = floor(($carItem->fuelTankVolume * 100) / $carItem->fuelConsumption);
+            $pitstopCount = floor($pathLength / $fullPathOnOnetank);
+
+            if ($pitstopCount >= 1) {
+                $pathTime += $carItem->pitStopTime * $pitstopCount;
+            }
+            $carTime[$carItem->id] = $pathTime;
+        }
+
+        $minVal = null;
+
+        foreach ($carTime as $keyTime => $valTime) {
+            if ($valTime < $minVal || $minVal === null) {
+                $minVal = $valTime;
+                $minKey = $keyTime;
+            }
+        }
+        foreach ($allCar as $key => $value) {
+            if ($value->id == $minKey) {
+                return $allCar[$key];
+            }
+        }
+
     }
 }
