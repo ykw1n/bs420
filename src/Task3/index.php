@@ -31,8 +31,11 @@ $carFord = new Car(3,
     100
 );
 
-$arena = new Track(20, 40);
 
+$arena = new Track(20, 40);
+$arena->add($carBMW);
+$arena->add($carTesla);
+$arena->add($carFord);
 $presenter = new CarTrackHtmlPresenter();
 $presentation = $presenter->present($arena);
 
