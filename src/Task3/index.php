@@ -14,7 +14,7 @@ $carBMW = new Car(1,
     20,
     100
 );
-$carTesla = new Car(1,
+$carTesla = new Car(2,
     'https://i.pinimg.com/originals/e4/15/83/e41583f55444b931f4ba2f0f8bce1970.jpg',
     'Tesla',
     150,
@@ -22,7 +22,7 @@ $carTesla = new Car(1,
     10,
     70
 );
-$carFord = new Car(1,
+$carFord = new Car(3,
     'https://pbs.twimg.com/profile_images/595409436585361408/aFJGRaO6_400x400.jpg',
     'Ford',
     180,
@@ -31,7 +31,7 @@ $carFord = new Car(1,
     100
 );
 
-$arena = new Track(4, 40);
+$arena = new Track(20, 40);
 
 $presenter = new CarTrackHtmlPresenter();
 $presentation = $presenter->present($arena);
