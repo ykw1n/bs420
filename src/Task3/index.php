@@ -23,7 +23,7 @@ $carTesla = new Car(2,
     70
 );
 $carFord = new Car(3,
-    'https://pbs.twimg.com/profile_images/595409436585361408/aFJGRaO6_400x400.jpg',
+    'https://fordsalomao.com.br/wp-content/uploads/2019/02/1499441577430-1-1024x542-256x256.jpg',
     'Ford',
     180,
     9,

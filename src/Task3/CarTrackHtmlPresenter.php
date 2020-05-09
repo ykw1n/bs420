@@ -17,9 +17,12 @@ class CarTrackHtmlPresenter
         $allFighters = '';
         foreach ($track->all() as $val) {
             $allFighters .= $val->getName();
-            $allFighters .=' : ';
+            $allFighters .=': ';
             $allFighters .= $val->getId();
-            //$allFighters .= '<br><img src="'.$val->getImage().'">';
+            $allFighters .=', ';
+            $allFighters .= $val->getSpeed();
+            $allFighters .=' ';
+            $allFighters .= '<br><img src="'.$val->getImage().'">';
 
             $allFighters .='<br>';
 
@@ -28,7 +31,7 @@ class CarTrackHtmlPresenter
             <h2>All Fighters: </h2>'.$allFighters.'
          
             <h3>Race winner <span style="color: crimson;">'.$winnerObj->getName().'</span> </h3>'.
-            '<img src="'.$winnerObj->getImage().'">
+            '
             <ul>
             <li>Id: '.$winnerObj->getId().'</li>
             <li>speed: '.$winnerObj->getSpeed().'</li>
