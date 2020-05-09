@@ -6,9 +6,9 @@ namespace App\Task1;
 
 class Track
 {
-    private array $ontrack = [];
-    private float $lapLength;
-    private int $lapsNumber;
+    public array $ontrack = [];
+    public float $lapLength;
+    public int $lapsNumber;
 
     /**
      * Track constructor.
